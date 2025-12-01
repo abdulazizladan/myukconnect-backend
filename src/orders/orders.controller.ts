@@ -42,7 +42,7 @@ export class OrdersController {
   }
 
   @Patch(':id/status')
-  @UseGuards(RolesGuard)
+  @UseGuards(JwtAuthGuard, RolesGuard)
   @Roles('admin')
   @ApiOperation({ summary: 'Update order status and tracking (Admin only)' })
   @ApiResponse({ status: 200, description: 'Order status updated successfully' })
