@@ -9,8 +9,8 @@ async function bootstrap() {
     .setTitle('MyUKConnect E-commerce API')
     .setDescription('API documentation for the UK shopping and delivery service.')
     .setVersion('1.0')
-    .addTag('auth', 'User authentication and role management')
-    .addTag('products', 'Inventory management by Admin')
+    //.addTag('auth', 'User authentication and role management')
+    //.addTag('products', 'Inventory management by Admin')
     .addBearerAuth({ type: 'http', scheme: 'bearer', bearerFormat: 'JWT' })
     .build();
 
