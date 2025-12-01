@@ -11,7 +11,7 @@ async function bootstrap() {
     .setVersion('1.0')
     .addTag('auth', 'User authentication and role management')
     .addTag('products', 'Inventory management by Admin')
-    .addBearerAuth({ type: 'http', scheme: 'bearer', bearerFormat: 'JWT' }, 'access-token')
+    .addBearerAuth({ type: 'http', scheme: 'bearer', bearerFormat: 'JWT' })
     .build();
 
   const document = SwaggerModule.createDocument(app, config);
