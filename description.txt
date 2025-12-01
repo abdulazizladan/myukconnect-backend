@@ -1,0 +1,36 @@
+# Project: MyUKConnect E-commerce Platform (NestJS)
+
+## Overview
+MyUKConnect is a modern e-commerce shopping application, similar in concept to uk2meonline.com. It is designed to handle product browsing, secure purchases, shipping management, and administrative inventory control. The backend will be built using the NestJS framework.
+
+## Key Features & Requirements
+
+1.  **Core Application**: Build the application using **NestJS**.
+2.  **Database**: Use **TypeORM** for defining and managing all application entities.
+3.  **Authentication**: Implement **Role-Based Access Control (RBAC)** using JWT and NestJS Guards.
+    * **Roles**: Must include `User` and `Admin`.
+4.  **Admin Functionality (Role: Admin)**:
+    * Inventory Management (CRUD for Products): Set item **name, description, number of items (stock), price, and discount (if available)**.
+    * Order Tracking: View and update order/delivery status.
+5.  **User Functionality (Role: User)**:
+    * Shopping: Browse and select items.
+    * Checkout: Set a **shipping address** and pick a **delivery option**.
+    * Order Tracking: View personal order status.
+6.  **Payment Integration**: Integrate **Stripe** for secure payment processing (using Payment Intents and Webhooks).
+7.  **API Documentation**: Use **Swagger** to generate comprehensive API documentation. Documentation must be **exhaustive** and follow best practices (using decorators like `@ApiTags()`, `@ApiOperation()`, `@ApiBearerAuth()`, etc.) for readability and clarity.
+
+## Technical Architecture Goal
+
+The application must be modular, adhering to NestJS best practices. Key modules will include `Auth`, `Users`, `Products`, `Carts`, `Orders`, `Payments`, and `Shipping`. Implement authorization guards to strictly enforce the `User` and `Admin` roles across all appropriate endpoints.
+
+## Implementation Starting Point (Instructions for Cursor)
+
+**Please set up the initial NestJS project structure.**
+
+1.  **Initialize the project:** Create a new NestJS project named `myukconnect`.
+2.  **Install Core Dependencies:** Install TypeORM, Postgres driver (or another DB driver), NestJS Swagger, NestJS Passport/JWT, and Stripe.
+3.  **Configure `main.ts`:** Add the basic Swagger configuration (`DocumentBuilder` and `SwaggerModule.setup`) to `/api/docs`.
+4.  **Create the `Users` Module:**
+    * Create the `user.entity.ts` using TypeORM with fields for `id`, `email`, `password`, and a **Role enum** (`UserRole.ADMIN`, `UserRole.USER`).
+    * Create the `auth` module.
+    * Ensure the project compiles successfully.
